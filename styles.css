@@ -1,0 +1,12 @@
+h1 {
+    color: rgba(5, 4, 104, 0.8);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.redText
+{
+    color: red;
+}
