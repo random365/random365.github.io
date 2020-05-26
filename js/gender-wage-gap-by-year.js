@@ -11,8 +11,8 @@ var vlSpec = {
         subtitleFontSize: 20,
         dy: -25
     },
-    width: 1600,
-    height: 800,
+    width: 1000,
+    height: 500,
     transform: [
         {
           lookup: 'LOCATION',
@@ -116,7 +116,7 @@ var vlSpec = {
                     },
                     legend: false
                 },
-                tooltip: {
+                tooltip: [{
                     field: 'name',
                     type: 'nominal',
                     condition: {
@@ -124,6 +124,16 @@ var vlSpec = {
                         value: ""
                     }
                 },
+                {
+                    field: 'actual_gap',
+                    type: 'quantitative',
+                    format: '.2%',
+                    condition: {
+                        test: "datum.position != 2",
+                        value: ""
+                    }
+                }
+            ],
                 "fillOpacity": {
                     "condition": {"selection": "select", "value": 1},
                     "value": 0.3
@@ -182,7 +192,7 @@ var vlSpec = {
                 font: "Monospace",
                 // fontStyle: "bold",
                 color: "red",
-                dy: -420,
+                dy: -280,
                 dx: -47
             },
             encoding: {
@@ -201,7 +211,7 @@ var vlSpec = {
                 font: "Monospace",
                 fontStyle: "bold",
                 color: "red",
-                dy: -420,
+                dy: -280,
                 dx: 107
             },
             encoding: {

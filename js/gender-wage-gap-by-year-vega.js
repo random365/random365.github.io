@@ -274,15 +274,13 @@ var vlSpec = {
               {"test": "datum.position != 2"},
               {"value": 0}
             ],
-            "tooltip": [
-              {"test": "datum.position != 2", "value": ""},
-              {
-                "signal": "isValid(datum[\"name\"]) ? datum[\"name\"] : \"\"+datum[\"name\"]"
-              }
-            ],
+            "tooltip": [{
+                "test": "datum.position != 2", "value": ""},
+              {"signal": "{\"Country\": isValid(datum[\"name\"]) ? datum[\"name\"] : \"\"+datum[\"name\"], \"Wage Gap\": format(datum[\"actual_gap\"], \".2%\")}"
+            }],
             "ariaRoleDescription": {"value": "bar"},
             "description": {
-              "signal": "\"name\" + \": \" + (isValid(datum[\"name\"]) ? datum[\"name\"] : \"\"+datum[\"name\"]) + \"; \" + \"Unadjusted gender wage gap (%)\" + \": \" + (format(datum[\"Unadjusted gender wage gap (%)_end\"]-datum[\"Unadjusted gender wage gap (%)_start\"], \"\")) + \"; \" + \"position\" + \": \" + (format(datum[\"position\"], \"\"))"
+              "signal": "\"name\" + \": \" + (isValid(datum[\"name\"]) ? datum[\"name\"] : \"\"+datum[\"name\"]) + \"; \" + \"Unadjusted gender wage gap (%)\" + \": \" + (format(datum[\"Unadjusted gender wage gap (%)_end\"]-datum[\"Unadjusted gender wage gap (%)_start\"], \"\")) + \"; \" + \"position\" + \": \" + (format(datum[\"position\"], \"\")) + \"; \" + \"actual_gap\" + \": \" + (format(datum[\"actual_gap\"], \".2%\"))"
             },
             "x": {"scale": "x", "field": "Unadjusted gender wage gap (%)_end"},
             "x2": {"scale": "x", "field": "Unadjusted gender wage gap (%)_start"},
